@@ -1,0 +1,20 @@
+<project>
+     <target name="clean">
+         <delete dir="classes" />
+    </target>
+<target name="compile"  depends="clean">
+     <mkdir dir="classes" />
+     <javac srcdir="." destdir="classes" />
+</target>
+<target name="jar" depends="compile">
+    <mkdir dir="jar" />
+    <jar destfile="jar/HelloWorld.jar" basedir="classes">
+    <manifest>
+         <attribute name="Main-Class" value="HelloWorld" />
+    </manifest>
+    </jar>
+</target>
+
+</project>
+    
+
